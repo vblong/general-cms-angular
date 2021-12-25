@@ -1,1 +1,0 @@
-{"ast":null,"code":"export class StringHelper {\n  generateDateTimeBasedUID() {\n    let now = Date();\n    return new Date().toISOString().replace(' ', '-');\n  }\n\n  unicode2ansi(str) {\n    return str.replace(/[^\\x00-\\x7F]/g, \"\");\n  }\n\n}","map":null,"metadata":{},"sourceType":"module"}
