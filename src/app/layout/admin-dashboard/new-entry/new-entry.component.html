@@ -1,0 +1,65 @@
+<div class="new-entry-wrapper">
+  <div class="new-entry-ctn">
+    <div id="entry-content" class="new-entry-element">
+      <form (ngSubmit)="onSubmit()" [formGroup]="myForm">
+          <!-- Title -->
+          <mat-form-field class="new-entry-title">
+            <input
+              matInput
+              [formControl]="myForm.controls.title"
+              placeholder="Title"
+              type="text"/>
+
+            <mat-error *ngIf="myForm.controls.title.hasError('required')">
+              Title must not be empty!
+            </mat-error>
+          </mat-form-field>
+
+          <!-- Body Editor -->
+
+          <div class="new-entry-body-ctn">
+            <editor
+              apiKey="ta3ftv27unm3jngefqh22xh7nae4y5ffyyd4cc7kdk26ucnx"
+              [formControl]="myForm.controls.body"
+              class="mat-elevation-z1"
+              (onInit)="handleEditorInit($event)"
+              [init]="{
+                height: 500,
+                menubar: false,
+                plugins: [
+                  'advlist autolink lists link image charmap print preview anchor',
+                  'searchreplace visualblocks code fullscreen',
+                  'insertdatetime media table paste code help wordcount'
+                ],
+                toolbar:
+                  'undo redo | formatselect | bold italic backcolor | \
+                  alignleft aligncenter alignright alignjustify | \
+                  bullist numlist outdent indent | removeformat | help'
+              }"
+            ></editor>
+              <mat-error *ngIf="myForm.controls.body.touched && myForm.controls.body.hasError('required')">
+                Content must not be empty!
+              </mat-error>
+              <mat-error *ngIf="myForm.controls.body.hasError('maxlength')">
+                Your post exceeds the character limit
+                {{ myForm.controls.body.getError('maxlength').actualLength }} /
+                {{ myForm.controls.body.getError('maxlength').requiredLength }}
+              </mat-error>
+          </div>
+
+          <!-- Submit button-->
+          <button class="new-entry-submit" mat-raised-button matTooltip="Post to {{constants.SITE_TITLE}}" >Submit</button>
+        </form>
+      </div>
+
+      <div id="entry-meta" class="new-entry-element pc-margin-vl">
+        <app-flex-checkbox
+          [name]="'Category'"
+          [items]="categories"
+          [displayAttr]="'name'"
+          [buttonRouterLink]="'/dashboard/category'"
+          [buttonTooltip]="'Edit Category'"
+          (states)="categorySelected($event)"></app-flex-checkbox>
+      </div>
+  </div>
+</div>

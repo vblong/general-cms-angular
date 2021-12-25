@@ -1,0 +1,29 @@
+.admin-bar-ctn {
+  background-color: #4D636F;
+  height: 50px;
+  .admin-bar-ctn-element {
+    a {
+      .admin-bar-element {
+        padding: 10px 20px;
+        display: inline-block;
+
+        .admin-bar-icon {
+          color: #fff;
+          transform: scale(1.25);
+        }
+
+        img {
+          width: 30px;
+          height: 30px;
+        }
+      }
+      .admin-bar-element:hover {
+        background-color: #3A4B53;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+<div class="pc-box-shadow pc-margin-vl pc-margin-hm">
+  <div class="container pc-bg-primary pc-bar pc-padding-vl pc-padding-hl">
+    <div class="row">
+      <div class="col-4 pc-padding-v0">
+        <h2 class="pc-align-left pc-padding-vs pc-font-white">{{name}}</h2>
+      </div>
+      <div class="col-2 pc-padding-v0 pc-bar pc-flex-vcenter">
+        <a [routerLink]="[buttonRouterLink]">
+          <button class="pc-align-right" matTooltip="{{buttonTooltip}}" mat-icon-button>
+            <mat-icon class="pc-font-white">edit</mat-icon>
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="pc-padding-vs">
+    <ul class="pc-padding-h0">
+      <li class="pc-align-left pc-padding-hm" *ngFor="let item of items">
+        <mat-checkbox (change)="statesChanges(item[displayAttr], $event.checked)">
+          {{item[displayAttr]}}
+        </mat-checkbox>
+      </li>
+    </ul>
+  </div>
+</div>

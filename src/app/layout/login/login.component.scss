@@ -1,0 +1,33 @@
+.login-wrapper {
+  text-align: center;
+  margin: 25px 0px;
+  .login-ctn {
+    display: inline-block;
+    text-align: center;
+    max-width: 400px;
+
+    .login-element {
+      .login-field-ctn {
+        width: 100%;
+        padding: 0px 25px;
+      }
+      .login-element-sub1 {
+        display: inline-block;
+        width: 50%;
+        &#register {
+          vertical-align: top;
+        }
+
+        button {
+          display: block;
+          margin: 0 auto;
+
+        }
+      }
+    }
+  }
+
+  mat-icon {
+    vertical-align: middle;
+  }
+}

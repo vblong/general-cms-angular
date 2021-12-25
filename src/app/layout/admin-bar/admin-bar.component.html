@@ -1,0 +1,41 @@
+<div class="admin-bar-ctn">
+  <div class="admin-bar-ctn-element">
+    <a *ngIf="showCollapse()" (click)="toggleColapseSideMenu()">
+      <div matTooltip="Collapse" class="admin-bar-element pc-border-right pc-border-white"><mat-icon class="admin-bar-icon">menu</mat-icon></div>
+    </a>
+    <!-- Left algined -->
+    <a href="/">
+      <div matTooltip="Home" class="admin-bar-element"><mat-icon class="admin-bar-icon">home</mat-icon></div>
+    </a>
+    <a [routerLink]="['dashboard']" href="#" *ngIf="isLoggedIn">
+      <div matTooltip="Dashboard" class="admin-bar-element"><mat-icon class="admin-bar-icon">dashboard</mat-icon></div>
+    </a>
+    <a href="coming-soon">
+      <div matTooltip="Members" class="admin-bar-element"><mat-icon class="admin-bar-icon">person</mat-icon></div>
+    </a>
+    <a href="coming-soon" *ngIf="isLoggedIn">
+      <div matTooltip="Email" class="admin-bar-element"><mat-icon class="admin-bar-icon">email</mat-icon></div>
+    </a>
+    <a [routerLink]="['/dashboard/new-entry']"  *ngIf="isLoggedIn">
+      <div matTooltip="New Entry" class="admin-bar-element"><mat-icon class="admin-bar-icon">brush</mat-icon></div>
+    </a>
+
+    <a href="#" class="pc-right" *ngIf="isLoggedIn">
+      <div matTooltip="Logout" class="admin-bar-element" (click)="logout()"><mat-icon class="admin-bar-icon">logout</mat-icon></div>
+    </a>
+
+    <!-- Right aligned -->
+    <a href="coming-soon" class="pc-right" *ngIf="isLoggedIn">
+      <div matTooltip="Notifications" class="admin-bar-element"><mat-icon class="admin-bar-icon">public</mat-icon></div>
+    </a>
+    <a href="coming-soon" class="w3-hide-small pc-right" title="My Account" *ngIf="isLoggedIn">
+      <div matTooltip="Profile" class="admin-bar-element">
+        <img src="https://www.w3schools.com/w3images/avatar2.png" class="w3-circle" alt="Avatar">
+      </div>
+    </a>
+    <a href="/login" class="pc-right" *ngIf="!isLoggedIn">
+      <div matTooltip="Login" class="admin-bar-element"><mat-icon class="admin-bar-icon">login</mat-icon></div>
+    </a>
+
+  </div>
+</div>

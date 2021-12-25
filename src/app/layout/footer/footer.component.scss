@@ -1,0 +1,34 @@
+.footer-container {
+  background-color: #4D636F;
+  height: 50px;
+  width: 100%;
+  .footer-element {
+    width: 50%;
+    height: 100%;
+    .footer-site-title {
+      padding: 0 15px;
+      color: #fff;
+      text-align: left;
+      margin: 0;
+      font-family: 'Source Code Pro', monospace;
+      line-height: 3rem;
+    }
+
+    &#copyright {
+      display: inline-block;
+    }
+
+    &#social {
+    }
+
+    .footer-icon {
+      height: 100%;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      padding: 0 15px;
+      font-size: 30px;
+    }
+  }
+}
+

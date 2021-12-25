@@ -1,0 +1,102 @@
+.content-section {
+  text-align: center;
+  .content-ctn {
+    display: inline-block;
+    max-width: 1280px;
+    .content-element {
+      padding: 10px;
+      display: inline-block;
+      &#content-ctn-loading {
+        display: flex;
+        justify-content: center;
+      }
+
+      &#content {
+        width: 80%;
+      }
+
+      &#sidebar {
+        width: 20%;
+        vertical-align: top;
+      }
+      .content-post-entries-ctn {
+        margin: 10px 0px;
+        .content-post-entry-ctn {
+          .content-post-entry-head {
+            .content-post-entry-title-ctn {
+              width: 70%;
+              display: inline-block;
+              .content-post-entries-title {
+                a {
+                  text-decoration: none;
+                  color: black;
+                  h2 {
+                    font-family: 'Courier New', Courier, monospace;
+                    font-weight: 500;
+                    font-size: 20px;
+                  }
+                  h2:hover {
+                    font-weight: 600;
+                  }
+                }
+              }
+            }
+
+            .content-post-entry-meta-ctn {
+              width: 30%;
+              display: inline-block;
+
+              .content-post-entry-meta-btn {
+                width: 33%;
+                display: inline-block;
+              }
+            }
+          }
+
+          .content-post-entries-body {
+            .content-post-entries-content {
+              p {
+                text-align: left;
+
+                &.content-first-post {
+                  height: 150px;
+                }
+              }
+            }
+          }
+
+          .content-post-entry-foot {
+            .content-post-entry-foot-element {
+              width: 50%;
+              display: inline-block;
+              &#left {
+                text-align: left;
+              }
+              &#right {
+                text-align: right;
+                padding-right: 10px;
+              }
+            }
+          }
+        }
+
+        mat-list-item {
+          height: auto;
+          &.content-post-entries-title {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+mat-paginator {
+  background-color: transparent;
+}
+
+.content-first-post, .content-post {
+  text-align: left;
+}
+.content-first-post {
+  height: 150px;
+}

@@ -1,0 +1,1 @@
+{"ast":null,"code":"export class QueryStringParameters {\n  constructor() {\n    this.toString = () => this.paramsAndValues.join('&');\n\n    this.paramsAndValues = [];\n  }\n\n  push(key, value) {\n    value = encodeURIComponent(value.toString());\n    this.paramsAndValues.push([key, value].join('='));\n  }\n\n}","map":null,"metadata":{},"sourceType":"module"}

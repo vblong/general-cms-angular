@@ -1,0 +1,28 @@
+.new-entry-wrapper {
+  max-width: 1280px;
+  height: 100%;
+  margin: 0 auto;
+  .new-entry-ctn {
+    margin: 0 0 20px 0;
+    .new-entry-element {
+      display: inline-block;
+      .new-entry-title {
+        font-size: 20px;
+        width: 100%;
+      }
+
+      &#entry-content {
+        width: 80%;
+      }
+      &#entry-meta {
+        width: 20%;
+        vertical-align: top;
+      }
+    }
+
+    .new-entry-submit {
+      margin: 10px 0px;
+      float: left;
+    }
+  }
+}

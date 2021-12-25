@@ -1,0 +1,57 @@
+.header-container {
+  text-align: center;
+
+  .header-site-title-ctn {
+    padding: 30px;
+  }
+
+
+  .header-site-title {
+    text-align: center;
+    font-size: 3rem;
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 300;
+  }
+
+
+  .header-site-headline {
+    text-align: center;
+    font-size: 1rem;
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 400;
+  }
+
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    text-align: center;
+    li {
+      display: inline-block;
+      text-decoration: none;
+      font-size: 1.5rem;
+      font-family: 'Courier New', Courier, monospace;
+      font-weight: 500;
+      a {
+        display: block;
+        color: #000;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        transition: all .5s ease;
+        .active {
+          font-weight: 600;
+        }
+      }
+      a:hover {
+        font-weight: 600;
+      }
+    }
+  }
+
+  mat-form-field {
+    width: 100%;
+  }
+}

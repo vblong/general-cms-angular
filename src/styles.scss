@@ -1,1 +1,242 @@
+@import 'themes';
+
+// @include nb-install() {
+//   @include nb-theme-global();
+// };
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$multi-purpose-cms-angular-primary: mat-palette($mat-indigo);
+$multi-purpose-cms-angular-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$multi-purpose-cms-angular-warn: mat-palette($mat-red);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$multi-purpose-cms-angular-theme: mat-light-theme((
+  color: (
+    primary: $multi-purpose-cms-angular-primary,
+    accent: $multi-purpose-cms-angular-accent,
+    warn: $multi-purpose-cms-angular-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($multi-purpose-cms-angular-theme);
+
+// @font-face {
+//   font-family: Source Code Pro;
+//   src: url(assets/SourceCodePro-Black.ttf) format("opentype");
+// }
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,400;0,500;0,600;1,400;1,500&display=swap');
+
+:root {
+  --primary: #4D636F;
+  --secondary: #738691;
+  --font-color: #424242;
+  --bg-color: #fff;
+  --heading-color: #292922;
+  --notification: #920000;
+  --white: #ffffff;
+  --black: #000000;
+}
+
+html, body { height: 100%; }
+body {
+  // width: 1024px;
+  margin: 0 auto;
+  font-family: "Source Code Pro", monospace;
+  background-color: #F1F1F1;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  font-family: "Source Code Pro", monospace !important;
+}
+
+li { list-style-type: none; margin-top: 4px; }
+
+.pc-right { float: right !important; }
+.pc-left { float: left !important; }
+.pc-align-left { text-align: left !important; }
+.pc-align-right { text-align: right !important; }
+.pc-align-center { text-align: center !important; }
+
+.pc-bar { height: 50px; }
+
+.pc-padding-v0 { padding: 0px 0px !important; }
+.pc-padding-vs { padding: 10px 0px !important; }
+.pc-padding-vm { padding: 15px 0px !important; }
+.pc-padding-vl { padding: 20px 0px !important; }
+
+.pc-padding-h0 { padding: 0px 0px !important; }
+.pc-padding-hs { padding: 0px 10px !important; }
+.pc-padding-hm { padding: 0px 15px !important; }
+.pc-padding-hl { padding: 0px 20px !important; }
+
+.pc-margin-v0 { margin: 0px 0px !important; }
+.pc-margin-vs { margin: 10px 0px !important; }
+.pc-margin-vm { margin: 15px 0px !important; }
+.pc-margin-vl { margin: 20px 0px !important; }
+
+.pc-margin-v0 { margin: 0px 0px !important; }
+.pc-margin-hs { margin: 0px 10px !important; }
+.pc-margin-hm { margin: 0px 15px !important; }
+.pc-margin-hl { margin: 0px 20px !important; }
+
+.box-shadow { box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%); }
+.pc-box-shadow { box-shadow: 1px 1px 10px #4d636f !important; }
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.pc-border-top { border-top: 1px solid; }
+.pc-border-bottom { border-bottom: 1px solid; }
+.pc-border-left { border-left: 1px solid; }
+.pc-border-right { border-right: 1px solid; }
+.pc-border-white { border-color: white; }
+.pc-border-aqua { border-color: aqua; }
+
+.pc-bg-white { background-color: white !important; }
+.pc-bg-black { background-color: black !important;}
+.pc-bg-primary { background-color: #4D636F !important; }
+.pc-font-white { color: white !important; }
+.pc-font-black { color: black !important; }
+.pc-font-primary { color: #4D636F !important; }
+
+.pc-wraptext { white-space: normal; }
+.pc-scrollable {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+
+.pc-flex-vcenter {
+  display: flex;
+  align-items: center;
+}
+.pc-flex-hcenter {
+  display: flex;
+  justify-content: center;
+}
+
+/** IMAGES */
+.pc-img-300x250 { width: 300px; height: 250px; }
+.pc-img-300x300 { width: 300px; height: 300px; }
+.pc-img-728x90 { width: 728px; height: 90px; }
+.pc-img-160x600 { width: 160px; height: 600px; }
+.pc-img-300x600 { width: 300px; height: 600px; }
+.pc-img-970x300 { width: 970px; height: 90px; }
+
+
+/** SCROLLBAR */
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #4D636F;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #003d5e;
+}
+
+/** GRID */
+.container{
+  width: 100%;
+  // max-width: 1200px;
+}
+
+/* cleafix hack */
+.row:before,
+.row:after {
+  content:"";
+  display: table ;
+  clear:both;
+}
+
+[class*='col-'] {
+  float: left;
+  min-height: 1px;
+  width: 16.66%;
+  padding: 12px;
+  // background-color: #FFDCDC;
+}
+
+.col-1{ width: 16.66%; }
+.col-2{ width: 33.33%; }
+.col-3{ width: 50%;    }
+.col-4{ width: 66.66%; }
+.col-5{ width: 83.33%; }
+.col-6{ width: 100%;   }
+
+.outline,
+.outline *{
+  outline: 1px solid #F6A1A1;
+}
+
+/* Some additional column content styles */
+[class*='col-'] > p {
+  // background-color: #FFC2C2;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  color: white;
+}
+
+@media all and (max-width:800px){
+  .col-1{ width: 33.33%;  }
+  .col-2{ width: 50%;     }
+  .col-3{ width: 83.33%;  }
+  .col-4{ width: 100%;    }
+  .col-5{ width: 100%;    }
+  .col-6{ width: 100%;    }
+
+  .row .col-2:last-of-type{
+      width: 100%;
+  }
+
+  .row .col-5 ~ .col-1{
+      width: 100%;
+  }
+}
+
+@media all and (max-width:650px){
+  .col-1{ width: 50%;     }
+  .col-2{ width: 100%;    }
+  .col-3{ width: 100%;    }
+  .col-4{ width: 100%;    }
+  .col-5{ width: 100%;    }
+  .col-6{ width: 100%;    }
+}

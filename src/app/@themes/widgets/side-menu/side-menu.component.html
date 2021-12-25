@@ -1,0 +1,11 @@
+<div class="box-shadow" [ngClass]="{'side-menu-wrapper-collapse' : collapse == false, 'side-menu-wrapper' : collapse == true}">
+  <div class="side-menu-ctn">
+      <a [routerLink]="item.link" class="side-menu-item" [ngClass]="{'side-menu-item-active' : item.active === true}" *ngFor="let item of menus">
+          <!-- Big -->
+          <mat-icon *ngIf="collapse">{{item.icon}}</mat-icon>
+          <!-- Small / Collapsed -->
+          <mat-icon *ngIf="!collapse" id="collapsed">{{item.icon}}</mat-icon>
+          <p *ngIf="collapse">{{item.title}}</p>
+      </a>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<app-header></app-header>
+
+<!-- Title with metadata -->
+<div class="entry-header box-shadow">
+  <div class="entry-title">
+    {{entry.post_title}}
+  </div>
+  <div class="entry-meta">
+    <p>Date: {{entry.post_date | date: 'dd/MM/yyyy'}}</p>
+    <p>By admin</p>
+    <p>Categories:</p>
+  </div>
+</div>
+<!-- Add a background color and large text to the whole page -->
+<!-- <div class="w3-sand w3-grayscale w3-large"> -->
+
+<!-- Content -->
+<div id="about" class="entry-content-ctn">
+  <div class="entry-content">
+    <p [innerHtml]="entry.post_content"></p>
+  </div>
+</div>
+
+<app-footer></app-footer>

@@ -1,0 +1,70 @@
+<div id="content" class="content-element">
+  <div class="content-ctn" id="content-ctn-loading" *ngIf="isLoading">
+    <mat-spinner></mat-spinner>
+  </div>
+
+  <div class="content-ctn" *ngIf="!isLoading">
+    <!-- <mat-grid-list cols="4" rowHeight="100px">
+      <mat-grid-tile
+          *ngFor="let tile of tiles"
+          [colspan]="tile.cols"
+          [rowspan]="tile.rows"
+          [style.background]="tile.color">
+        {{tile.text}}
+      </mat-grid-tile>
+    </mat-grid-list> -->
+
+    <mat-list class="content-post-entries-ctn" *ngFor="let entry of entries; let i = index">
+      <div class="content-post-entry-ctn">
+        <div class="content-post-entry-head">
+          <div class="content-post-entry-title-ctn">
+            <mat-list-item class="content-post-entries-title">
+              <a [routerLink]="['/entry']" [queryParams]="{post_id: entry.ID}"><h2>{{entry.post_title}}</h2></a>
+            </mat-list-item>
+          </div>
+
+          <div class="content-post-entry-meta-ctn">
+            <div class="content-post-entry-meta-btn">
+              <button mat-icon-button>
+                <mat-icon matBadge="0" matBadgeColor="red">favorite_border</mat-icon>
+              </button>
+            </div>
+            <div class="content-post-entry-meta-btn">
+              <button mat-icon-button>
+                <mat-icon matBadge="{{entry.comment_count}}" matBadgeColor="primary">messenger_outline</mat-icon>
+              </button>
+            </div>
+            <div class="content-post-entry-meta-btn">
+              <button mat-icon-button matTooltip="Copy link" (click)="openSnackBar()"><mat-icon>link</mat-icon></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-post-entry-body">
+          <mat-list-item class="content-post-entries-content">
+              <p [innerHTML]="entry.post_content | excerpt:200" [ngClass]="{'content-first-post' : i == 0, 'content-post': i !== 0}"></p>
+          </mat-list-item>
+        </div>
+
+        <div class="content-post-entry-foot">
+          <div id="left" class="content-post-entry-foot-element">
+            <a [routerLink]="['/entry']" [queryParams]="{post_id: entry.ID}"><button mat-raised-button color="white">Read more</button></a>
+          </div>
+          <div id="right" class="content-post-entry-foot-element">
+            Last updated on {{entry.post_modified | date: 'dd/MM/yyyy'}}
+          </div>
+        </div>
+      </div>
+    </mat-list>
+
+    <mat-paginator [length]="totalEntries"
+                  [pageIndex]="paginatorIndex"
+                  [pageSize]="pageSize"
+                  [pageSizeOptions]="[5, 10, 25, 100]"
+                  aria-label="Select page"
+                  [showFirstLastButtons]="true"
+                  (page)="getPaginatorData($event)"
+                  >
+    </mat-paginator>
+  </div>
+</div>

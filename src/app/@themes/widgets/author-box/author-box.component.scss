@@ -1,0 +1,17 @@
+.w3-card {
+  .w3-container {
+    padding: 0;
+    h4 {
+      padding: 10px 0px;
+      font-size: 2em;
+      background-color: var(--primary);
+      color: var(--white);
+    }
+    .headline {
+      font-style: italic;
+      &::after, &::before {
+        content: '"';
+      }
+    }
+  }
+}
