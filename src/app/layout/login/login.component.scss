@@ -5,8 +5,10 @@
     display: inline-block;
     text-align: center;
     max-width: 400px;
+    min-width: 400px;
 
     .login-element {
+      padding: 5px 0px;
       .login-field-ctn {
         width: 100%;
         padding: 0px 25px;
@@ -23,6 +25,9 @@
           margin: 0 auto;
 
         }
+      }
+      .login-social-btn {
+        min-width: 50px;
       }
     }
   }

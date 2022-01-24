@@ -9,7 +9,7 @@ import { ApiHttpService } from 'src/app/service/api-http-service';
 })
 export class EntriesComponent implements OnInit {
 
-  columns: string[] = ['post_author', 'post_title', 'post_status', 'post_modified'];
+  columns: string[] = ['post_author', 'post_title', 'post_category', 'post_status', 'post_modified'];
   entries: any;
   crudAPI: any = {
     'delete' : {'endpoint': 'delete-entry'}
@@ -29,8 +29,30 @@ export class EntriesComponent implements OnInit {
   getData(): void {
     this._apiHttpService.get(this._apiEndpointService.getAllEntryBrief())
     .subscribe(
-      data => { this.entries = data; },
+      data => {
+        this.entries = data;
+        this.getDataCategories();
+      },
       error => { }
     )
+  }
+
+  /**
+   *  API Return type example:
+   *  { term_group, name, slug, term_id }
+   */
+  getDataCategories() {
+    for(const entry of this.entries) {
+      this._apiHttpService.get(this._apiEndpointService.getPostCategories(entry.ID))
+      .subscribe(data => {
+        data = data.slice(0);
+        let cats: string[] = [];
+        for(const dat in data) {
+          cats.push(data[dat].name);
+        }
+
+        entry['post_category'] = cats;
+      });
+    }
   }
 }

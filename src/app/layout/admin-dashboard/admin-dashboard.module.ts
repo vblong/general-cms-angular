@@ -16,7 +16,7 @@ import { AdminDashboardRoutingModule } from './admin-dashboard-routing.module';
 
 @NgModule({
   declarations: [
-    AdminDashboardComponent,
+    AdminDashboardComponent
   ],
   exports: [
     AdminDashboardComponent

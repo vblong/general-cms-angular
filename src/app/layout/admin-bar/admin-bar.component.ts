@@ -17,6 +17,7 @@ export class AdminBarComponent implements OnInit {
   showModeratorBoard = false;
   showCollapseMenuBtn = false;
   username: string;
+  profileAvatarUrl: string = 'https://www.w3schools.com/w3images/avatar2.png';
 
   constructor(
     private tokenStorageService: TokenStorageService,
@@ -25,15 +26,17 @@ export class AdminBarComponent implements OnInit {
 
   ngOnInit(): void {
     this.isLoggedIn = !!this.tokenStorageService.getToken();
-
     if (this.isLoggedIn) {
       const user = this.tokenStorageService.getUser();
       this.roles = user.roles;
 
-      this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
-      this.showModeratorBoard = this.roles.includes('ROLE_MODERATOR');
+      // this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
+      // this.showModeratorBoard = this.roles.includes('ROLE_MODERATOR');
 
       this.username = user.username;
+
+      if(user.photoUrl)
+      this.profileAvatarUrl = user.photoUrl;
     }
   }
 

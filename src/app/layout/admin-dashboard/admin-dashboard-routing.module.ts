@@ -2,12 +2,15 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { AdminDashboardComponent } from './admin-dashboard.component';
+import { EcommerceComponent } from './ecommerce/ecommerce.component';
 
 const routes: Routes = [
   {
     path: '',
     component: AdminDashboardComponent,
     children: [
+      { path: '', redirectTo: 'ecommerce' },
+      { path: 'ecommerce', loadChildren: () => import('./ecommerce/ecommerce.module').then(m => m.EcommerceModule) },
       { path: 'entries', loadChildren: () => import('./entries/entries.module').then(m => m.EntriesModule) },
       { path: 'new-entry', loadChildren: () => import('./new-entry/new-entry.module').then(m => m.NewEntryModule) },
       { path: 'category', loadChildren: () => import('./category/category.module').then(m => m.CategoryModule) },

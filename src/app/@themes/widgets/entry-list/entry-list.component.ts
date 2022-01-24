@@ -28,7 +28,7 @@ export class EntryListComponent implements OnInit {
   totalPage: number = 0;
   lowValue: number = 0;
   highValue: number = 20;
-  isLoading: boolean = true;
+  isLoading: boolean = false;
 
   $entries: any;
   $totalEntris: any;
@@ -49,7 +49,7 @@ export class EntryListComponent implements OnInit {
 
   ngOnInit(): void {
     //  Get latest 10 entries
-    this.updateEntry();
+    // this.updateEntry();
 
 
   }

@@ -44,7 +44,7 @@ export class NewEntryComponent implements OnInit {
   private strHelper: StringHelper;
 
   categories: any;
-  chosenCategories: any[];
+  chosenCategories: boolean[];
 
   @ViewChild(FlexCheckboxComponent) checkbox: FlexCheckboxComponent;
 
@@ -71,6 +71,7 @@ export class NewEntryComponent implements OnInit {
   }
 
   onSubmit() {
+    console.log(this.chosenCategories);
     if(this.myForm.valid) {
       let newEntry: Entry = {
         post_author: 0,
@@ -99,8 +100,23 @@ export class NewEntryComponent implements OnInit {
 
       this._apiHttpService.post(this._apiEndpointsService.postNewEntry(), newEntry)
       .subscribe(data => {
+        let post: any[] = [data];
         console.log(data);
+
         this._snackbar.open(newEntry.post_title + " posted", "Close", { duration: 5000 });
+        let catIDs: number[] = [];
+        for(const i in this.chosenCategories) {
+          if(this.chosenCategories[i])
+            catIDs.push(this.categories[i].term_id);
+        }
+        console.log("??? ???", post[0].ID, catIDs);
+        this._apiHttpService.post(this._apiEndpointsService.modifyPostCategories(post[0].ID, catIDs), [])
+        .subscribe(result => {
+          console.log("categories modified", result);
+        },
+        error => {
+          console.log("categories NOT modified", error);
+        });
       });
     }
   }
@@ -109,15 +125,21 @@ export class NewEntryComponent implements OnInit {
     return this._apiHttpService.get(this._apiEndpointsService.getAllTermsEndpoint())
     .subscribe(data => {
       this.categories = data;
+      this.chosenCategories = Array<boolean>(this.categories.length).fill(false);
     });
   }
 
+  /**
+   *
+   * @param event
+   * {
+   *  - item: name of category
+   *  - value: true | false <=> checked or not checked
+   *  - index: index in this.categories
+   * }
+   * Example { item: 'Typescript', value: true, index: 3 }
+   */
   categorySelected(event: any) {
-    this.chosenCategories = [];
-    this.categories.forEach(cat => {
-      if(cat.name == event.item) {
-        this.chosenCategories.push(cat);
-      }
-    });
+    this.chosenCategories[event.index] = event.value;
   }
 }

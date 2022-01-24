@@ -1,6 +1,10 @@
 .admin-bar-ctn {
   background-color: #4D636F;
   height: 50px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 99999;
   .admin-bar-ctn-element {
     a {
       .admin-bar-element {

@@ -5,15 +5,18 @@
     text-align: center;
     .dashboard-child-ctn {
       height: 100%;
-      display: inline-block;
-      vertical-align: top;
       &#left-bar {
-        width: 20%;
+        position: fixed;
+        height: 100%;
+        overflow: auto;
       }
 
       &#content {
-        width: 80%;
+        max-width: 1400px;
+        margin-left: 250px;
         padding: 0px 30px;
+        margin: 0 auto;
+        margin-top: 50px;
       }
     }
   }

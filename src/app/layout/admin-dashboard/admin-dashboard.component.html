@@ -1,12 +1,15 @@
 <div class="dashboard-wrapper">
   <div class="dashboard-ctn">
-    <div id="left-bar" class="dashboard-child-ctn">
+    <!-- <div id="left-bar" class="dashboard-child-ctn" [ngStyle]="{'width': collapse ? '20%' : '5%'}"> -->
+    <div id="left-bar" class="dashboard-child-ctn box-shadow-md">
       <app-side-menu></app-side-menu>
     </div>
 
-    <div id="content" class="dashboard-child-ctn">
+    <!-- <div id="content" class="dashboard-child-ctn" [ngStyle]="{'margin-left': collapse ? '80%' : '95%'}"> -->
+    <div id="content" class="dashboard-child-ctn" [ngStyle]="{'margin-left': collapse ? '250px' : 'auto'}">
       <router-outlet></router-outlet>
     </div>
   </div>
+  <app-footer></app-footer>
+
 </div>
-<app-footer></app-footer>

@@ -15,8 +15,8 @@
   </div>
   <div class="pc-padding-vs">
     <ul class="pc-padding-h0">
-      <li class="pc-align-left pc-padding-hm" *ngFor="let item of items">
-        <mat-checkbox (change)="statesChanges(item[displayAttr], $event.checked)">
+      <li class="pc-align-left pc-padding-hm" *ngFor="let item of items; let i = index">
+        <mat-checkbox (change)="statesChanges(item[displayAttr], $event.checked, i)">
           {{item[displayAttr]}}
         </mat-checkbox>
       </li>

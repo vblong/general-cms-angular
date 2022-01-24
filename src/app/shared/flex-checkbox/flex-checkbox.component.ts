@@ -59,8 +59,8 @@ export class FlexCheckboxComponent implements OnInit {
     this.task.subItem.forEach(t => (t.completed = completed));
   }
 
-  statesChanges(item: any, value: any) {
-    this.states.emit({item, value});
+  statesChanges(item: any, value: any, index: any) {
+    this.states.emit({item, value, index});
   }
 
 }

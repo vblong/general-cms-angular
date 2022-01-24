@@ -23,10 +23,11 @@ import { ContentLayoutModule } from './layout/content-layout/content-layout.modu
 import { EntryModule } from './layout/entry/entry.module';
 import { NotFoundModule } from './layout/not-found/not-found.module';
 import { ComingSoonModule } from './layout/coming-soon/coming-soon.module';
+import { GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule } from 'angularx-social-login';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -48,10 +49,26 @@ import { ComingSoonModule } from './layout/coming-soon/coming-soon.module';
     EntryListModule,
 
     MatProgressSpinnerModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+
+    SocialLoginModule
   ],
   providers: [
-    fakeBackendProvider
+    fakeBackendProvider,
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(
+              '445892489232-kets77giu5ee6agmvkpkcj1o62n9k0fc.apps.googleusercontent.com'
+            )
+          }
+        ]
+      } as SocialAuthServiceConfig,
+    }
   ],
   bootstrap: [AppComponent]
 })

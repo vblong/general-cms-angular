@@ -1,5 +1,11 @@
 export const MENU_ITEMS: any[] = [
   {
+    title: 'E-Commerce Dashboard',
+    icon: 'shopping_cart',
+    link: 'ecommerce',
+    active: false
+  },
+  {
     title: 'Entries',
     icon: 'receipt_long',
     link: 'entries',
@@ -136,4 +142,10 @@ export const MENU_ITEMS: any[] = [
       },
     ],
   },
+  {
+    title: '',
+    icon: '',
+    link: '',
+    active: false,
+  }
 ];

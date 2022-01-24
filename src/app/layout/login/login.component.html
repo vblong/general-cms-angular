@@ -8,7 +8,7 @@
 <div class="login-wrapper">
   <mat-card class="login-ctn box-shadow">
     <div class="login-element">
-      <mat-card-title>Log In</mat-card-title>
+      <mat-card-title>Login</mat-card-title>
     </div>
 
     <div class="login-element">
@@ -39,11 +39,25 @@
         </div>
       </form>
     </div>
-
-
   </mat-card>
-
-
 </div>
 
+<div class="login-wrapper">
+  <mat-card-title>Or</mat-card-title>
+</div>
+
+<div class="login-wrapper">
+  <mat-card class="login-ctn box-shadow">
+    <div class="login-element">
+        <cool-google-button class="login-social-btn"  color="dark" (click)="loginWithGoogle()">
+          Login with Google
+        </cool-google-button>
+    </div>
+    <div class="login-element">
+        <cool-facebook-button class="login-social-btn" color="dark" (click)="loginWithFacebook()">
+          Login with Facebook
+        </cool-facebook-button>
+    </div>
+  </mat-card>
+</div>
 <!-- <app-footer></app-footer> -->

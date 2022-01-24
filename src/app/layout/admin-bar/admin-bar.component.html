@@ -30,7 +30,7 @@
     </a>
     <a href="coming-soon" class="w3-hide-small pc-right" title="My Account" *ngIf="isLoggedIn">
       <div matTooltip="Profile" class="admin-bar-element">
-        <img src="https://www.w3schools.com/w3images/avatar2.png" class="w3-circle" alt="Avatar">
+        <img src="{{profileAvatarUrl}}" class="w3-circle" alt="Avatar">
       </div>
     </a>
     <a href="/login" class="pc-right" *ngIf="!isLoggedIn">

@@ -69,6 +69,37 @@ export class ApiEndpointsService {
     );
     return urlBuilder.toString();
   }
+
+  public createUrlWithPathAndQueryParameters(
+    action: string,
+    pathVariables?: any[],
+    queryStringHandler?: (queryStringParameters: QueryStringParameters) => void
+) : string {
+
+    //  Create path
+    let encodedPathVariablesUrl: string = '';
+    // Push extra path variables
+    if(pathVariables) {
+        for (const pathVariable of pathVariables) {
+            if (pathVariable !== null) {
+            encodedPathVariablesUrl +=
+                `/${encodeURIComponent(pathVariable.toString())}`;
+            }
+        }
+    }
+
+    const urlBuilder: UrlBuilder = new UrlBuilder(
+        this.constants.API_ENDPOINT,
+        `${action}${encodedPathVariablesUrl}`
+    );
+
+    if (queryStringHandler) {
+        queryStringHandler(urlBuilder.queryString);
+    }
+
+    //  Create query parameter
+    return urlBuilder.toString();
+}
   /* #endregion */
 
   /**
@@ -139,6 +170,36 @@ export class ApiEndpointsService {
     return this.createUrlWithPathVariables(
       'delete-term',
       [ term_id ]
+    );
+  }
+
+  /**
+   *  POST-CATEGORY RELATIONSHIP
+   */
+  public getPostCategories(postid: number): string {
+    return this.createUrlWithPathAndQueryParameters(
+      'term-relationship',
+      ['post-category', postid]
+    );
+  }
+
+  public modifyPostCategories(postid: number, categories: number[] | String): string {
+    let cats: String = "";
+    console.log("We have", categories);
+    if(!(categories instanceof String))
+      for(const cate in categories) {
+        cats += categories[cate] + ',';
+      }
+
+    if(categories instanceof String)
+      cats = categories;
+    console.log("so???", cats);
+    return this.createUrlWithPathAndQueryParameters(
+      'term-relationship',
+      ['modify', postid],
+      (qs: QueryStringParameters) => {
+          qs.push('category_ids', cats)
+      }
     );
   }
 }

@@ -13,6 +13,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { LoginRoutingModule } from './login-routing-module';
 
+import { CoolSocialLoginButtonsModule } from '@angular-cool/social-login-buttons';
+
 @NgModule({
   declarations: [ LoginComponent ],
   exports: [ LoginComponent ],
@@ -30,7 +32,9 @@ import { LoginRoutingModule } from './login-routing-module';
     MatInputModule,
     MatIconModule,
     MatButtonModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+
+    CoolSocialLoginButtonsModule
   ]
 })
 export class LoginModule { }

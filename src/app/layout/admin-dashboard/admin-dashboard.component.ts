@@ -9,6 +9,7 @@ import { MENU_ITEMS } from '../../@themes/widgets/side-menu/side-menu.menu';
 
 import { StringHelper } from '../../helpers/string-helper';
 import { Constants } from '../../config/constants';
+import { SideMenuService } from 'src/app/service/side-menu.service';
 
 const maxLength = (
   editorSubject: Subject<any>,
@@ -42,13 +43,21 @@ export class AdminDashboardComponent implements OnInit {
   private editorSubject: Subject<any> = new AsyncSubject();
   private strHelper: StringHelper;
   menu = MENU_ITEMS;
+  collapse: boolean = true;
+
   constructor(private _apiHttpService: ApiHttpService,
     private _apiEndpointsService: ApiEndpointsService,
+    private _sideMenuService: SideMenuService,
     private constants: Constants) {
       this.strHelper = new StringHelper();
     }
 
   ngOnInit(): void {
+    this._sideMenuService.change.subscribe(collapse => {
+      this.collapse = collapse;
+    });
+
+    this.collapse = this._sideMenuService.getState();
   }
 
   public myForm = new FormGroup({

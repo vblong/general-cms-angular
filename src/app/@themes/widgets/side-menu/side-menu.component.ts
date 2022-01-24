@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { MENU_ITEMS } from './side-menu.menu';
 
@@ -12,8 +12,8 @@ import { SideMenuService } from '../../../service/side-menu.service';
 export class SideMenuComponent implements OnInit {
 
   showFiller = false;
-  collapse = true;
-  menus: any = MENU_ITEMS;
+  @Input() collapse = true;
+  @Input() menus: any = MENU_ITEMS;
   constructor(
     private _sideMenuService: SideMenuService,
     private _router: Router
@@ -23,6 +23,8 @@ export class SideMenuComponent implements OnInit {
     this._sideMenuService.change.subscribe(collapse => {
       this.collapse = collapse;
     });
+
+    this.collapse = this._sideMenuService.getState();
 
     this.menus.forEach(element => {
       element.active = false;

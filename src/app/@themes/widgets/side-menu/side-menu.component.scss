@@ -1,6 +1,6 @@
 .side-menu-wrapper,
 .side-menu-wrapper-collapse {
-  // width: 250px;
+  width: 250px;
   height: 100%;
 
   .side-menu-ctn {
@@ -23,9 +23,10 @@
 
       p {
         display: inline;
-        font-family: 'Source Code Pro', monospace;
+        font-family: var(--font-primary);
         font-size: medium;
         margin: 0;
+        text-align: left;
       }
 
       &:hover {
