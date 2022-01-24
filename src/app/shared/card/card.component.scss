@@ -1,0 +1,39 @@
+.card {
+  // min-height: 450px;
+  background-color: var(--primary);
+  border-radius: 5px;
+  position: relative;
+
+  .card-header {
+    text-align: left;
+    color: var(--white);
+    font-family: var(--font-primary);
+    font-size: var(--font-size-3xl);
+    margin: 5px 0px;
+    padding: 15px;
+  }
+
+  .card-headline {
+    text-align: left;
+    color: var(--white);
+    font-family: var(--font-primary);
+    font-size: var(--font-size-xl);
+    margin: 5px 0px;
+    padding: 15px;
+  }
+
+  .card-content {
+    padding: 0;
+  }
+
+  .card-footer {
+    position: absolute;
+    bottom: 0;
+    text-align: left;
+    color: var(--white);
+    font-family: var(--font-primary);
+    font-size: var(--font-size-xl);
+    margin: 5px 0px;
+    padding: 15px;
+  }
+}

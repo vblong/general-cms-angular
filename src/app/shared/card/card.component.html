@@ -1,0 +1,16 @@
+<div class="card" [ngStyle]="{'min-height': minHeight}">
+  <div class="card-header" *ngIf="header">
+    {{header}}
+  </div>
+  <div class="card-headline" *ngIf="headline">
+    {{headline}}
+  </div>
+
+  <div class="card-content">
+    <ng-content></ng-content>
+  </div>
+  <div class="card-footer" *ngIf="footer">
+    {{footer}}
+  </div>
+
+</div>

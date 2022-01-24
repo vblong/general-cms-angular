@@ -1,0 +1,17 @@
+<div class="progress-card-container">
+  <div class="progress-card-header txt-left" *ngIf="header">
+    {{header}}
+  </div>
+
+  <div class="progress-card-headline txt-left" *ngIf="headline">
+    {{headline}}
+  </div>
+
+  <div>
+    <mat-progress-bar mode="determinate" value="{{progress}}"></mat-progress-bar>
+  </div>
+
+  <div class="progress-card-footer txt-left" *ngIf="footer">
+    {{footer}}
+  </div>
+</div>

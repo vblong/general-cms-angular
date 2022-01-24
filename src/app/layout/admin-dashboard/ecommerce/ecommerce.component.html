@@ -1,0 +1,111 @@
+<div class="container">
+  <div class="row">
+    <div class="col-2" >
+      <div class="card">
+          <div class="card-number">
+            {{189283 | number}}
+          </div>
+          <div class="card-title">
+            Pageviews
+          </div>
+
+          <div echarts [options]="pageViewsChartOption" class="card-chart"></div>
+      </div>
+    </div>
+    <div class="col-2" >
+      <div class="card">
+        <div class="card-number">
+          {{4096 | currency: 'EUR'}}
+        </div>
+        <div class="card-title">
+          Sales
+        </div>
+
+        <div echarts [options]="salesChartOption" class="card-chart"></div>
+      </div>
+    </div>
+    <div class="col-2">
+      <div class="card">
+        <div class="card-number">
+          User distribution
+        </div>
+        <div class="card-title">
+          <br>
+        </div>
+
+        <div echarts [options]="userChartOption" [autoResize]="true" class="card-chart"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-4">
+      <app-card [header]="'Country demographic'">
+        <div class="map-container">
+          <div class="map-frame">
+            <div id="map"></div>
+          </div>
+        </div>
+      </app-card>
+    </div><!-- Col 4 -->
+
+    <div class="col-2">
+      <app-card
+        [header]="selectedCountryDetail.name"
+        [footer]="selectedCountryDetail.continent + ' | ' + selectedCountryDetail.wb_a3"
+        [minHeight]="'450px'">
+
+        <app-progress-card
+          [headline]="'Total\'s profit(s)'"
+          [header]="(selectedCountryDetail.mapcolor7 * selectedCountryDetail.mapcolor8 * selectedCountryDetail.mapcolor9) | currency"
+          [footer]="'Better than last week (' + (selectedCountryDetail.mapcolor7 + selectedCountryDetail.mapcolor9 * selectedCountryDetail.mapcolor8) + '%)'"
+          [progress]="selectedCountryDetail.mapcolor7 + selectedCountryDetail.mapcolor9 * selectedCountryDetail.mapcolor8">
+        </app-progress-card>
+
+        <app-progress-card
+          [headline]="'New order(s)'"
+          [header]="selectedCountryDetail.mapcolor7"
+          [footer]="'Better than last week (' + (selectedCountryDetail.pop_est % 100) + '%)'"
+          [progress]="(selectedCountryDetail.pop_est % 100)">
+        </app-progress-card>
+
+        <app-progress-card
+          [headline]="'New comment(s)'"
+          [header]="selectedCountryDetail.mapcolor8 + selectedCountryDetail.mapcolor9"
+          [footer]="'Better than last week (' + (selectedCountryDetail.pop_est % 10 + 1) + '%)'"
+          [progress]="(selectedCountryDetail.pop_est % 10 + 1)">
+        </app-progress-card>
+      </app-card>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-6">
+      <app-card
+        [header]="'Traffic'"
+        [footer]="'Weekly'"
+        [minHeight]="'450px'">
+
+        <app-progress-card
+          [headline]="'Total\'s profit(s)'"
+          [header]="(selectedCountryDetail.mapcolor7 * selectedCountryDetail.mapcolor8 * selectedCountryDetail.mapcolor9) | currency"
+          [footer]="'Better than last week (' + (selectedCountryDetail.mapcolor7 + selectedCountryDetail.mapcolor9 * selectedCountryDetail.mapcolor8) + '%)'"
+          [progress]="selectedCountryDetail.mapcolor7 + selectedCountryDetail.mapcolor9 * selectedCountryDetail.mapcolor8">
+        </app-progress-card>
+
+        <app-progress-card
+          [headline]="'New order(s)'"
+          [header]="selectedCountryDetail.mapcolor7"
+          [footer]="'Better than last week (' + (selectedCountryDetail.pop_est % 100) + '%)'"
+          [progress]="(selectedCountryDetail.pop_est % 100)">
+        </app-progress-card>
+
+        <app-progress-card
+          [headline]="'New comment(s)'"
+          [header]="selectedCountryDetail.mapcolor8 + selectedCountryDetail.mapcolor9"
+          [footer]="'Better than last week (' + (selectedCountryDetail.pop_est % 10 + 1) + '%)'"
+          [progress]="(selectedCountryDetail.pop_est % 10 + 1)">
+        </app-progress-card>
+      </app-card>
+    </div>
+</div>
