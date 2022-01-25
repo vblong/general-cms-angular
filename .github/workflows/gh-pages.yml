@@ -43,4 +43,4 @@ jobs:
 
     - name: Deploy
       if: success()
-      run: aws s3 sync ./dist/admin-dashboard-angular s3://admin-dashboard-angular
+      run: aws s3 sync ./dist/multi-purpose-cms-angular s3://admin-dashboard-angular
