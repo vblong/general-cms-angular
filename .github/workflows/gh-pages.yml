@@ -27,6 +27,14 @@ jobs:
     - name: Install dependencies
       run: npm install
 
+    - name: Install echarts 1
+      run: npm install echarts -S
+
+    - name: Install echarts 2
+      run: npm install ngx-echarts -S
+
+    - name: Install echarts 3
+      run: npm install @types/echarts -D
     #- name: Run tests
     #  run: npm run test:headless
 
