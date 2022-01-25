@@ -6,6 +6,12 @@ export const MENU_ITEMS: any[] = [
     active: false
   },
   {
+    title: 'IoT Dashboard',
+    icon: 'devices',
+    link: 'iot-dashboard',
+    active: false
+  },
+  {
     title: 'Entries',
     icon: 'receipt_long',
     link: 'entries',

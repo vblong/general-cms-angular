@@ -27,10 +27,12 @@ export class EntriesComponent implements OnInit {
   }
 
   getData(): void {
+    console.log("???");
     this._apiHttpService.get(this._apiEndpointService.getAllEntryBrief())
     .subscribe(
       data => {
-        this.entries = data;
+        console.log(this.entries);
+        // this.entries = data;
         this.getDataCategories();
       },
       error => { }

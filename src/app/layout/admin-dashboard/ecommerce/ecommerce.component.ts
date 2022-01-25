@@ -31,9 +31,23 @@ export class EcommerceComponent implements OnInit, OnDestroy, AfterViewInit  {
   geoJson: any;
   selectedCountry: string = "DEU";
 
-  selectedCountryDetail: any = {
+  selectedCountryDetail: any = {};
 
+  /** Traffic table data */
+  columns: string[] = ['Date', 'Website visits', 'Sales', 'Changes'];
+  tblData: any = [
+    {'Date': 'Mon', 'Website visits': 910, 'Sales' : 12, 'Changes': 13 },
+    {'Date': 'Tue', 'Website visits': 583, 'Sales' : 6, 'Changes': 8 },
+    {'Date': 'Wed', 'Website visits': 210, 'Sales' : 1, 'Changes': 2 },
+    {'Date': 'Thu', 'Website visits': 88, 'Sales' : 0, 'Changes': -9 },
+    {'Date': 'Fri', 'Website visits': 102, 'Sales' : 2, 'Changes': 1 },
+    {'Date': 'Sat', 'Website visits': 1011, 'Sales' : 56, 'Changes': 89 },
+    {'Date': 'Sun', 'Website visits': 798, 'Sales' : 32, 'Changes': 42 }
+  ];
+  crudAPI: any = {
+    // 'delete' : {'endpoint': 'delete-entry'}
   };
+  pageSize: number = 5;
 
   constructor() {
     this.data = [];

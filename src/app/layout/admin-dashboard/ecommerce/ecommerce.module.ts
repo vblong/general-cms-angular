@@ -7,6 +7,7 @@ import { NgxEchartsModule } from 'ngx-echarts';
 
 import { CardModule } from '../../../shared/card/card.module';
 import { ProgressCardModule } from '../../../shared/progress-card/progress-card.module';
+import { FlexTableModule } from 'src/app/shared/flex-table/flex-table.module';
 
 @NgModule({
   declarations: [ EcommerceComponent ],
@@ -20,7 +21,8 @@ import { ProgressCardModule } from '../../../shared/progress-card/progress-card.
     }),
 
     CardModule,
-    ProgressCardModule
+    ProgressCardModule,
+    FlexTableModule
   ]
 })
 export class EcommerceModule { }

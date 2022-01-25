@@ -17,6 +17,8 @@ export class FlexTableComponent implements OnInit, AfterViewInit, OnChanges {
   @Input() pageSize = 10;
   @Input() displayedColumns: string[];
   @Input() crudAPI: any[] = [{}];
+  @Input() showFilter: boolean = true;
+  @Input() showPaginator: boolean = true;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;

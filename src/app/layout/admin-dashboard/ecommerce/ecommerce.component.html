@@ -82,30 +82,15 @@
   <div class="row">
     <div class="col-6">
       <app-card
-        [header]="'Traffic'"
-        [footer]="'Weekly'"
+        [header]="'Weekly sales'"
         [minHeight]="'450px'">
 
-        <app-progress-card
-          [headline]="'Total\'s profit(s)'"
-          [header]="(selectedCountryDetail.mapcolor7 * selectedCountryDetail.mapcolor8 * selectedCountryDetail.mapcolor9) | currency"
-          [footer]="'Better than last week (' + (selectedCountryDetail.mapcolor7 + selectedCountryDetail.mapcolor9 * selectedCountryDetail.mapcolor8) + '%)'"
-          [progress]="selectedCountryDetail.mapcolor7 + selectedCountryDetail.mapcolor9 * selectedCountryDetail.mapcolor8">
-        </app-progress-card>
-
-        <app-progress-card
-          [headline]="'New order(s)'"
-          [header]="selectedCountryDetail.mapcolor7"
-          [footer]="'Better than last week (' + (selectedCountryDetail.pop_est % 100) + '%)'"
-          [progress]="(selectedCountryDetail.pop_est % 100)">
-        </app-progress-card>
-
-        <app-progress-card
-          [headline]="'New comment(s)'"
-          [header]="selectedCountryDetail.mapcolor8 + selectedCountryDetail.mapcolor9"
-          [footer]="'Better than last week (' + (selectedCountryDetail.pop_est % 10 + 1) + '%)'"
-          [progress]="(selectedCountryDetail.pop_est % 10 + 1)">
-        </app-progress-card>
+          <app-flex-table
+            [showFilter]="false"
+            [showPaginator]="false"
+            [data]="tblData"
+            [displayedColumns]="columns"
+            [crudAPI]="crudAPI" [pageSize]="pageSize"></app-flex-table>
       </app-card>
     </div>
 </div>

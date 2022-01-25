@@ -12,7 +12,7 @@ export class Constants {
   public readonly API_MOCK_ENDPOINT: string = this.FRONTEND_ADDR + this.API_PORT; //'http://localhost:8000';
 
   //  Site information
-  private _SITE_TITLE: string = "Long Vu";
+  private _SITE_TITLE: string = "Built on Angular 13.1.0";
   public get SITE_TITLE(): string {
     return this._SITE_TITLE;
   }
