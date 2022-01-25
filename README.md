@@ -16,6 +16,10 @@ This project aims to provide users a content management system that helps easy b
 
 TODO (need RestAPI and a SQL database)
 
+## Live demo
+
+Access [live demo](http://admin-dashboard-angular.s3-website.eu-central-1.amazonaws.com/)
+
 ## Sample dashboard screenshot
 
 ![alt text](/screenshot.png?raw=true)
