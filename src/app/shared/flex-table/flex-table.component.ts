@@ -19,6 +19,7 @@ export class FlexTableComponent implements OnInit, AfterViewInit, OnChanges {
   @Input() crudAPI: any[] = [{}];
   @Input() showFilter: boolean = true;
   @Input() showPaginator: boolean = true;
+  @Input() editable: boolean = false;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
@@ -45,7 +46,7 @@ export class FlexTableComponent implements OnInit, AfterViewInit, OnChanges {
   }
 
   ngAfterViewInit(): void {
-    if(this.displayedColumns) this.displayedColumns.push('Action');
+    if(this.editable) this.displayedColumns.push('Action');
   }
 
   applyFilter(event: Event) {

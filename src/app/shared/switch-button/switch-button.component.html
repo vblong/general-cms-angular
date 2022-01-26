@@ -1,0 +1,10 @@
+<div matRipple class="box-shadow control-btn-ctn" (click)="click()"
+  [ngStyle]="{'background-color': backgroundColor}">
+  <div id="ifhs" class="control-btn-cell" [ngStyle]="{'background': iconBackgroundGradientColor}">
+    <mat-icon [ngStyle]="{'color' : iconColor}">{{icon}}</mat-icon>
+  </div>
+  <div id="ixlb" class="control-btn-cell" >
+    <div id="ihfx" [ngStyle]="{'color': textColor}">{{name}}</div>
+    <div id="ix5f" [ngStyle]="{'color': textColor}">{{state == true ? 'On' : 'Off'}}</div>
+  </div>
+</div>

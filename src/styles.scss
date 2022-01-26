@@ -153,6 +153,10 @@ img {
   justify-content: center;
 }
 
+.z-index-top { z-index: 99999; }
+.z-index-middle { z-index: 99998; }
+.z-index-bottom { z-index: 99997; }
+
 /** IMAGES */
 .pc-img-300x250 { width: 300px; height: 250px; }
 .pc-img-300x300 { width: 300px; height: 300px; }

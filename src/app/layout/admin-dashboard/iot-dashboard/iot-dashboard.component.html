@@ -1,35 +1,52 @@
 <div class="container">
   <div class="row">
     <div class="col-3">
-      <div class="box-shadow control-btn-ctn">
-        <div class="control-btn-icon-ctn" [ngStyle]="{'background-color': backgroundColor}">
-          <div class="control-btn-icon">
-            <mat-icon [color]="color">lightbulb</mat-icon>
-          </div>
-        </div>
-
-        <div class="control-btn-state">
-          <div class="control-btn-name">
-            {{name}}
-          </div>
-          <div class="control-btn-value">
-            {{state}}
-          </div>
-        </div>
-
-      </div>
+      <app-switch-button
+        [name]="'Lights'"
+        [state]="true"
+        [icon]="'lightbulb'"
+        [iconColor]="'#FFFFFF'"
+        [iconBackgroundColor]="'#6707EE'"
+        [textColor]="'#FFFFFF'">
+      </app-switch-button>
     </div>
+
     <div class="col-3">
-      Roller Shades
+      <app-switch-button
+        [name]="'Microwave'"
+        [state]="true"
+        [icon]="'microwave'"
+        [iconColor]="'#FFFFFF'"
+        [textColor]="'#000000'"
+        [iconBackgroundColor]="'#65B325'"
+        [backgroundColor]="'#FFFFFF'">
+      </app-switch-button>
     </div>
   </div>
 
   <div class="row">
     <div class="col-3">
-      Wireless Audio
+      <app-switch-button
+        [name]="'Wireless Radio'"
+        [state]="true"
+        [icon]="'radio'"
+        [iconColor]="'#FFFFFF'"
+        [textColor]="'#000000'"
+        [iconBackgroundColor]="'#46BFF5'"
+        [backgroundColor]="'#FFFFFF'">
+      </app-switch-button>
     </div>
+
     <div class="col-3">
-      Coffee Maker
+      <app-switch-button
+        [name]="'Coffee Maker'"
+        [state]="true"
+        [icon]="'coffee_maker'"
+        [iconColor]="'#FFFFFF'"
+        [textColor]="'#000000'"
+        [iconBackgroundColor]="'#FFA410'"
+        [backgroundColor]="'#FFFFFF'">
+      </app-switch-button>
     </div>
   </div>
 </div>

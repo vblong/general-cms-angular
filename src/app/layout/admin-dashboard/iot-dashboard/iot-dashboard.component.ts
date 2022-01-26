@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-io-tdashboard',
@@ -7,20 +7,10 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class IoTDashboardComponent implements OnInit {
 
-  lightState: boolean = true;
-  rollerShadesState: boolean = true;
-  wirelessAudioState: boolean = true;
-  coffeeMakerState: boolean = true;
-
-  @Input() state: boolean = true;
-  @Input() name: string = 'Light';
-  @Input() icon: string = '';
-  @Input() color: string = '';
-  @Input() backgroundColor: string = '#6707EE';
-
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }

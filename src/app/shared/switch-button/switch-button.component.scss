@@ -1,0 +1,50 @@
+.control-btn-ctn {
+  display:flex;
+  justify-content:flex-start;
+  align-items:stretch;
+  flex-wrap:nowrap;
+  padding:10px;
+  // background-color: var(--primary);
+
+  .control-btn-cell {
+    min-height:75px;
+    flex-grow:1;
+    flex-basis:100%;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &#ifhs{
+      flex-basis:100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+    }
+    &#ixlb{
+      float:none;
+      align-items:center;
+      justify-content:space-between;
+      flex-direction:column;
+      align-self:center;
+    }
+
+    #ihfx{
+      padding:10px;
+      text-align: left;
+      font-family: var(--font-primary);
+      font-size: var(--font-size-xl);
+    }
+    #ix5f{
+      padding:10px;
+      text-align: left;
+      font-family: var(--font-primary);
+      font-size: var(--font-size-lg);
+    }
+
+    mat-icon {
+      transform: scale(2);
+    }
+  }
+}

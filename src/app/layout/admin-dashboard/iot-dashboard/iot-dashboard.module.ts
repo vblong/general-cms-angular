@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { IoTDashboardComponent } from './iot-dashboard.component';
 import { IotDashboardRoutingModule } from './iot-dashboard-routing.module';
-import { MatIconModule } from '@angular/material/icon';
+import { SwitchButtonModule } from 'src/app/shared/switch-button/switch-button.module';
 
 @NgModule({
   declarations: [ IoTDashboardComponent ],
@@ -12,7 +12,7 @@ import { MatIconModule } from '@angular/material/icon';
     CommonModule,
     IotDashboardRoutingModule,
 
-    MatIconModule
+    SwitchButtonModule
   ]
 })
 export class IoTDashboardModule { }
